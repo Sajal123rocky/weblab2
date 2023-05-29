@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="res"></p>
+    <script>
+        function vowelCount(input)
+        {
+            inp=input.toLowerCase();
+            let obj={'a':0,'e':0,'i':0,'o':0,'u':0};
+            for(let i=0;i<inp.length;i++)
+            {
+                let c=inp.charAt(i);
+                if('aeiou'.includes(c)){
+                    if(obj[c])
+                    obj[c]++;
+                    else
+                    obj[c]=1;
+                }
+            }
+            console.log(obj);
+            var listitem=''
+            let text=''
+            //let vowel=obj;
+            for(let vowel in obj){
+                listitem+=`<li>${vowel}--${obj[vowel]}`
+            }
+            text=`<ul>${listitem}</ul>`
+            document.getElementById("res").innerHTML=text;
+
+        }
+        var str=prompt("Enter a string");
+        vowelCount(str);
+    </script>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="react/react.development.js"></script>
+    <script src="react/react-dom.development.js"></script>
+    <script src="react/prop-types.js"></script>
+    <script src="react/babel.min.js"></script>
+</head>
+<body>
+    <div id="root"></div>
+    <script type="text/babel">
+        class P4a extends React.Component{
+            constructor(){
+                super();
+                this.state={
+                    name:"aa",
+                    address:"bb",
+                    company:"cc"
+                }
+            }
+            change()
+            {
+                this.setState({name:"changename",address:"changeaddress",company:"changecomapny"});
+            }
+            render(){
+                return(
+                    <div>
+                        {this.state.name}<br/>{this.state.address}<br/>{this.state.company}<br/>
+                        <button onClick={()=>this.change()}>change</button>
+                    </div>
+                )
+            }
+        }
+        ReactDOM.render(<P4a/>,document.getElementById('root'));
+    </script>
+</body>
+</html>

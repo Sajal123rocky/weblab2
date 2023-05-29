@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="res"></p>
+    <script type="text/javascript">
+        function pluralize(count,noun)
+        {
+            if(count==1)
+            return count+" "+noun;
+            else if(noun=='sheep'||noun=='geese')
+            return count+" "+noun;
+            else
+            return count+" "+noun+"s";
+        }
+        let count=Number(prompt("Enter a count"));
+        let noun=prompt("Enter a noun");
+        let res=pluralize(count,noun);
+        document.getElementById("res").innerHTML=res;
+    </script>
+</body>
+</html>
